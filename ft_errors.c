@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_errors.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acaire-d <acaire-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anais <anais@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 13:50:43 by acaire-d          #+#    #+#             */
-/*   Updated: 2025/11/17 14:04:39 by acaire-d         ###   ########.fr       */
+/*   Updated: 2025/11/21 12:31:41 by anais            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,61 @@
 
 int	syntax_error(char *strnb)
 {
-	int i = 0;
-	while(strnb[i])
+	if (strnb == NULL || *strnb == '\0')
+		return (0);
+	if (*strnb == '+' || *strnb == '-')
+		strnb++;
+	if (!(*strnb >= '0' && *strnb <= '9'))
+		return (0);
+	while (*++strnb)
 	{
-		if (!((strnb[i] == '+' || strnb[i] == '-')) 
-			&& (strnb[1] >= '0' && strnb[1] <= '9'))
-			return (1);
-		if ((strnb[0] == '+' || strnb[0] == '-') 
-			&& (strnb[i] >= '0' && strnb[i] <= '9'))
-			i++;
+		if (!(*strnb >= '0' && *strnb <= '9'))
+			return (0);
 	}
+	return (1);
+}
+
+int	duplicate_check(t_node *a, long nb)
+{
+	while(a)
+	{
+		if (a->value == nb)
+			return (0);
+		a = a->next;
+	}
+	return (1);
+}
+
+static void	ft_lstfree(t_node **stack)
+{
+	t_node	*tmp;
+
+	if (stack == NULL || *stack == NULL)
+		return ;
+	while (*stack)
+	{
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
+	}
+}
+
+static void	ft_freematrix(char **argv)
+{
+	int	i;
+
+	i = 0;
+	if (NULL == argv || NULL == *argv)
+		return ;
+	while (argv[i])
+		free(argv[i++]);
+	free(argv); // dont forget to free the whole empty strings
+}
+
+void	free_error(t_node **stack, char **argv)
+{
+	ft_lstfree(stack);
+	ft_freematrix(argv);
+	write(1, "Error\n", 6);
+	exit (1);
 }

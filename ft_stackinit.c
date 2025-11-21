@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stackinit.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acaire-d <acaire-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anais <anais@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 10:54:03 by acaire-d          #+#    #+#             */
-/*   Updated: 2025/11/17 14:05:44 by acaire-d         ###   ########.fr       */
+/*   Updated: 2025/11/21 13:01:48 by anais            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// controle derreur 
+// temporary verbose
 
-int long ft_atol(char *str)
+static int long	ft_atol(char *str)
 {
 	long	res;
 	int		sign;
@@ -31,7 +31,7 @@ int long ft_atol(char *str)
 		str++;
 	}
 	while (*str >= '0' && *str <= '9')
-    {
+	{
 		res = res * 10 + *str - '0';
 		str++;
 	}
@@ -40,16 +40,21 @@ int long ft_atol(char *str)
 
 void	ft_stackinit(t_node **a, char **argv)
 {
-	int i = 0;
-	int nb = 0;
+	int		i;
+	long	nb;
+
+	i = 0;
+	nb = 0;
 	while (argv[i])
 	{
+		if (!syntax_error(argv[i]))
+			free_error(a, argv);
 		nb = ft_atol(argv[i]);
-		//if repetitions
-		//if not a number
-		// if syntax error
-		ft_lstaddnode(*a, nb);
+		if (nb < INT_MIN || nb > INT_MAX)
+			free_error(a, argv);
+		if (!duplicate_check(*a, nb))
+			free_error(a, argv);
+		ft_lstaddnode(a, nb);
 		i++;
 	}
 }
-

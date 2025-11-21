@@ -3,29 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   small_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acaire-d <acaire-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anais <anais@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 14:07:25 by acaire-d          #+#    #+#             */
-/*   Updated: 2025/11/17 14:35:48 by acaire-d         ###   ########.fr       */
+/*   Updated: 2025/11/21 12:43:02 by anais            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	sorted(t_node *a)
+int	ft_sorted(t_node *a)
 {
 	if (a == NULL)
 		return (0);
-	while (a->next != NULL)
+	while (a->next)
 	{
-		if (a->value > a->next->value)
+		if ((a->value) > (a->next->value))
 			return (0);
 		a = a->next;
 	}
 	return (1);
 }
 
-t_node	*biggest(t_node *stack) // why is it t_node and not int ? also, why *
+static t_node	*biggest(t_node *stack) // if not a pointer, ca return que la valeur de la node et pas la node au complet
 {
 	int 	big;
 	t_node 	*biggest_N;
@@ -45,5 +45,15 @@ t_node	*biggest(t_node *stack) // why is it t_node and not int ? also, why *
 
 void	small_sort(t_node **a)
 {
+	t_node	*high_node;
 	
+	if (*a == NULL)
+		return ;
+	high_node = biggest(*a);
+	if (high_node == (*a))
+		ra(a);
+	else if (high_node == (*a)->next)
+		rra(a);
+	if ((*a)->value > (*a)->next->value)
+		sa(a);
 }

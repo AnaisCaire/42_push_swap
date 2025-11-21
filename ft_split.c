@@ -1,105 +1,136 @@
+#include "push_swap.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-char    ft_strlcpy(char *dest, const char *src, int len)
+static char	ft_strlcpy(char *dest, const char *src, int len)
 {
-        int i = 0, lensrc =0;
-        while(src[lensrc])
-                lensrc++;
-        if (len > 0)
-        {
-                while((i+1) < len && src[i])
-                {
-                        dest[i] = src[i];
-                        i++;
-                }
-                dest[i] = '\0';
-        }
-        return(len);
+	int	i;
+	int	lensrc;
+
+	i = 0;
+	lensrc = 0;
+	while (src[lensrc])
+		lensrc++;
+	if (len > 0)
+	{
+		while ((i + 1) < len && src[i])
+		{
+			dest[i] = src[i];
+			i++;
+		}
+		dest[i] = '\0';
+	}
+	return (len);
 }
 
-int     ft_isspace(char c)
+static int	ft_isspace(char c)
 {
-        if (c == '\t' || c == ' ' || c == '\n')
-                return (1);
-        return (0);
+	if (c == '\t' || c == ' ' || c == '\n')
+		return (1);
+	return (0);
 }
 
-int     ft_count(char *s)
+static int	ft_count(char *s)
 {
-        int i = 0;
-        int count = 0;
-        int inside;
-        while(s[i])
-        {
-                inside = 0;
-                if (s[i] && ft_isspace(s[i]))
-                        i++;
-                while (s[i] && !ft_isspace(s[i]))
-                {
-                        if(!inside)
-                        {
-                                count++;
-                                inside = 1;
-                        }
-                        i++;
-                }
-        }
-        return (count);
+	int	i;
+	int	count;
+	int	inside;
+
+	i = 0;
+	count = 0;
+	while (s[i])
+	{
+		inside = 0;
+		if (s[i] && ft_isspace(s[i]))
+			i++;
+		while (s[i] && !ft_isspace(s[i]))
+		{
+			if (!inside)
+			{
+				count++;
+				inside = 1;
+			}
+			i++;
+		}
+	}
+	return (count);
 }
 
-int     ft_fill(char *s, char **arr)
+static int	ft_fill(char *s, char **arr)
 {
-        int i = 0, j =0, len =0;
+	int	i;
+	int	j;
+	int	len;
 
-        while(s[i])
-        {
-                len = 0;
-                if (s[i] && ft_isspace(s[i]))
-                        i++;
-                while (s[i] && !ft_isspace(s[i]))
-                {
-                        len++;
-                        i++;
-                }
-                if (len > 0)
-                {
-                        arr[j] = malloc(sizeof(*arr[j]) * (len + 1));
-                        if(!arr[j])
-                                return (0);
-                        ft_strlcpy(arr[j], s + i - len, len + 1);
-                        j++;
-                }
-        }
-        arr[j] = NULL;
-        return(1);
+	i = 0;
+	j = 0;
+	len = 0;
+	while (s[i])
+	{
+		len = 0;
+		if (s[i] && ft_isspace(s[i]))
+			i++;
+		while (s[i] && !ft_isspace(s[i]))
+		{
+			len++;
+			i++;
+		}
+		if (len > 0)
+		{
+			arr[j] = malloc(sizeof(*arr[j]) * (len + 1));
+			if (!arr[j])
+				return (j);
+			ft_strlcpy(arr[j], s + i - len, len + 1);
+			j++;
+		}
+	}
+	arr[j] = NULL;
+	return (j); //better to return how many were filled after failure 
 }
 
-char    **ft_split(char *str)
+static void	free_partial(char **arr, int filled)
 {
-        int count = 0;
-        char **arr;
+	int	k;
 
-        count = ft_count(str);
-        printf("%d\n", count);
-        arr = malloc(sizeof(char *) * (count + 1));
-        if (!arr)
-                return (NULL);
-        ft_fill(str, arr);
-        return (arr);
+	if (!arr)
+		return ;
+	k = 0;
+	while (k < filled)
+	{
+		free(arr[k]);
+		k++;
+	}
+	free(arr);
+}
+
+char	**ft_split(char *str)
+{
+	int		count;
+	char	**arr;
+	int		filled;
+
+	if (str == NULL || *str == '\0')
+		return (NULL);
+	count = ft_count(str);
+	arr = malloc(sizeof(char *) * (count + 1));
+	if (!arr)
+		return (NULL);
+	filled = ft_fill(str, arr);
+	if (filled < count && count > 0)
+	{
+		/* ft_fill filled up to index `filled` before failing */
+		free_partial(arr, filled);
+		return (NULL);
+	}
+	return (arr);
 }
 
 /* int  main()
 {
-        int     i = 0;
-        char    string[] = "this is a test      ok \n hahahaha";
-        char    **test = ft_split(string);
-        while(test[i])
-        {
-                printf("%s\n", test[i]);
-                i++;
-        }
+	int     i = 0;
+	char    string[] = "this is a test      ok \n hahahaha";
+	char    **test = ft_split(string);
+	while(test[i])
+	{
+		printf("%s\n", test[i]);
+		i++;
+	}
 } */
-

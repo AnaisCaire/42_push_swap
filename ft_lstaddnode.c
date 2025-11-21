@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   add_num.c                                          :+:      :+:    :+:   */
+/*   ft_lstaddnode.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acaire-d <acaire-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anais <anais@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 11:19:31 by acaire-d          #+#    #+#             */
-/*   Updated: 2025/11/17 12:23:27 by acaire-d         ###   ########.fr       */
+/*   Updated: 2025/11/21 13:10:56 by anais            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node  *ft_lstlast(t_node *lst)
+static t_node   *ft_lstlast(t_node *lst)
 {
-        if (!lst)
-                return (NULL);
-        while (lst->next != NULL)
-                lst = lst->next;
-        return (lst);
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }
 
 void	ft_lstaddnode(t_node **stack, long int nb)
@@ -26,22 +26,33 @@ void	ft_lstaddnode(t_node **stack, long int nb)
 	t_node *node;
 	t_node *last_node;
 
-	node = malloc(sizeof(t_node));  // here why dont we take the size of nb ?
-	if(!node)
+	if (stack == NULL) //stack is already de double pointer dont forget = begining 
 		return ;
-	if (stack == NULL)
+	node = malloc(sizeof(t_node));
+	if(!node)
 		return ;
 	node->next = NULL;
 	node->value = nb;
-	if (*stack == NULL)
+	if (*stack == NULL) //this refers to the list
 	{
-		*stack = node;
-		node->prev = NULL;	//why put the value of the previous as NULL?
+		*stack = node; //node is now the head
+		node->prev = NULL;	//make sure there is no previous node
 	}
 	else
 	{
-		last_node  = ft_lstlast(*stack);
+		last_node = ft_lstlast(*stack);
 		last_node->next = node;
 		node->prev = last_node;
 	}
+}
+
+int		ft_stacklen(t_node *stack)
+{
+	int len = 0;
+	while(stack)
+	{
+		len++;
+		stack = stack->next;
+	}
+	return (len);
 }

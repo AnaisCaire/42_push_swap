@@ -6,74 +6,66 @@ typedef struct s_node
 {
 	int				value;
 	// ajouter position, prix des mouvements, position final
-	struct s_node 	*next;
-	struct s_node 	*prev;
+	struct s_node	*next;
+	struct s_node	*prev;
 }					t_node;
 
 t_node  *ft_lstlast(t_node *lst)
 {
-        if (!lst)
-                return (NULL);
-        while (lst->next != NULL)
-                lst = lst->next;
-        return (lst);
+	if (!lst)
+		return (NULL);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }
 t_node  *ft_lstnew(int content)
 {
-        t_node  *node;
+	t_node  *node;
 
-        node = malloc(sizeof(t_node));
-        if (node == NULL)
-                return (NULL);
-        node->value = content;
-        node->next = NULL;
-        return (node);
+	node = malloc(sizeof(t_node));
+	if (node == NULL)
+		return (NULL);
+	node->value = content;
+	node->next = NULL;
+	return (node);
 }
 
 
 void    ft_lstadd_back(t_node **lst, t_node *new)
 {
-        t_node  *last;
+	t_node  *last;
 
-        if (lst == NULL)
-                return ;
-        if (*lst == NULL)
-        {
-                *lst = new;
-                return ;
-        }
-        last = ft_lstlast(*lst);
-        last->next = new;
+	if (lst == NULL)
+		return ;
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	last = ft_lstlast(*lst);
+	last->next = new;
 }
 
-/* void	rotate(t_node **stack)
+void	reverse_rotate(t_node **stack)
 {
 	t_node  *last;
-	t_node	*first;
+	t_node	*prev;
 
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+		return ;
+	
 	last = *stack;
-	first = *stack;
+	prev = NULL;
 	while (last->next)
+	{
+		prev = last;
 		last = last->next;
-	*stack = first->next; //first in now the second
-	first->next = NULL; // detach the first becuase it will become the last so the next will be NULL
-	last->next = first; // put the first in the last. 
-} */
+	} 
+	prev->next = NULL; //detach the last
+	last->next = *stack; // pit last in front
+	*stack = last;
+} 
 
-void	swap(t_node **stack)
-{
-	t_node  *first;
-	t_node	*second;
-	int		temp;
-
-	if (*stack == NULL || stack == NULL) //add if stack is smaller than 2...
-		return ; 
-	first = *stack;
-	second = first->next;
-	temp = first->value;
-	first->value = second->value;
-	second->value = temp;
-}
 
 int  main()
 {
@@ -86,8 +78,8 @@ int  main()
 	ft_lstadd_back(&lst, sec);
 	ft_lstadd_back(&lst, tird);
 
-	//rotate(&lst);
-	swap(&lst);
+	reverse_rotate(&lst);
+	//swap(&lst);
 
 	printf("%d\n", (int)lst->value);
 	printf("%d\n", (int)lst->next->value);

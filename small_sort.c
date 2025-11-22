@@ -6,7 +6,7 @@
 /*   By: anais <anais@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 14:07:25 by acaire-d          #+#    #+#             */
-/*   Updated: 2025/11/21 12:43:02 by anais            ###   ########.fr       */
+/*   Updated: 2025/11/22 12:40:34 by anais            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_sorted(t_node *a)
 	return (1);
 }
 
-static t_node	*biggest(t_node *stack) // if not a pointer, ca return que la valeur de la node et pas la node au complet
+static t_node	*biggest(t_node *stack)
 {
 	int 	big;
 	t_node 	*biggest_N;
@@ -43,6 +43,32 @@ static t_node	*biggest(t_node *stack) // if not a pointer, ca return que la vale
 	return (biggest_N);
 }
 
+static void	bring_to_top(t_node **a, t_node *target)
+{
+	int		len;
+	int		pos;
+	t_node	*tmp;
+
+	if (!a || !*a || !target)
+		return ;
+	len = ft_stacklen(*a);
+	pos = 0;
+	tmp = *a;
+	while (tmp && tmp != target)
+	{
+		pos++;
+		tmp = tmp->next;
+	}
+	if (!tmp)
+		return ;
+	if (pos <= len / 2)
+		while (*a != target)
+			ra(a);
+	else
+		while (*a != target)
+			rra(a);
+}
+
 void	small_sort(t_node **a)
 {
 	t_node	*high_node;
@@ -56,4 +82,27 @@ void	small_sort(t_node **a)
 		rra(a);
 	if ((*a)->value > (*a)->next->value)
 		sa(a);
+}
+
+void	five_sort(t_node **a, t_node **b)
+{
+	int		len;
+	t_node	*max;
+
+	if (a == NULL || *a == NULL)
+		return ;
+	len = ft_stacklen(*a);
+	while (len > 3)
+	{
+		max = biggest(*a);
+		bring_to_top(a, max);
+		pb(a, b);
+		len--;
+	}
+	small_sort(a);
+	while (b && *b)
+	{
+		pa(a, b);
+		ra(a);
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: anais <anais@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 10:54:03 by acaire-d          #+#    #+#             */
-/*   Updated: 2025/11/21 13:01:48 by anais            ###   ########.fr       */
+/*   Updated: 2025/11/21 14:26:50 by anais            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 // temporary verbose
 
-static int long	ft_atol(char *str)
+static int long	ft_atol(char *str) //change res to long long ? to detect overflows?
 {
 	long	res;
 	int		sign;

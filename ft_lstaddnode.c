@@ -33,6 +33,9 @@ void	ft_lstaddnode(t_node **stack, long int nb)
 		return ;
 	node->next = NULL;
 	node->value = nb;
+	node->keep = 0;
+	node->index = 0;
+	node->lis = 0;
 	if (*stack == NULL) //this refers to the list
 	{
 		*stack = node; //node is now the head

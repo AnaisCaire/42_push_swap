@@ -1,0 +1,101 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
+  <diagram name="Page-1" id="QAKy-nMusJz9LOfVKA8r">
+    <mxGraphModel dx="2208" dy="-226" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#B2B2B2" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="aWlsC6i2ldC96t2Gd4rn-49" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#001DBC;strokeWidth=4;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=default;labelBackgroundColor=default;edgeStyle=orthogonalEdgeStyle;fillColor=#0050ef;" parent="1" target="aWlsC6i2ldC96t2Gd4rn-50" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-465" y="1415" as="sourcePoint" />
+            <mxPoint x="-515" y="1685" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-465" y="1535" />
+              <mxPoint x="-465" y="1535" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aWlsC6i2ldC96t2Gd4rn-54" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#001DBC;strokeWidth=4;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=default;labelBackgroundColor=default;endArrow=classic;fillColor=#0050ef;" parent="1" source="aWlsC6i2ldC96t2Gd4rn-50" target="aWlsC6i2ldC96t2Gd4rn-53" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aWlsC6i2ldC96t2Gd4rn-50" value="ALLOC_IN_LIS&lt;div&gt;&lt;font size=&quot;1&quot;&gt;make a new array to store the longest increasing subsequence&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=default;labelBackgroundColor=default;fillColor=#8C8C8C;" parent="1" vertex="1">
+          <mxGeometry x="-565" y="1565" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aWlsC6i2ldC96t2Gd4rn-51" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#001DBC;strokeWidth=4;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=default;labelBackgroundColor=default;edgeStyle=orthogonalEdgeStyle;fillColor=#0050ef;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-405" y="1415" as="sourcePoint" />
+            <mxPoint x="-405" y="1565" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aWlsC6i2ldC96t2Gd4rn-56" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#001DBC;strokeWidth=4;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=default;labelBackgroundColor=default;endArrow=classic;fillColor=#0050ef;" parent="1" source="aWlsC6i2ldC96t2Gd4rn-52" target="aWlsC6i2ldC96t2Gd4rn-53" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aWlsC6i2ldC96t2Gd4rn-52" value="GET_BEST_END&lt;div&gt;find longest lenght and the end value&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=default;labelBackgroundColor=default;fillColor=#8C8C8C;" parent="1" vertex="1">
+          <mxGeometry x="-425" y="1565" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aWlsC6i2ldC96t2Gd4rn-53" value="initialise the array of ints, find the best end and mark the indices of the LIS." style="whiteSpace=wrap;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=default;labelBackgroundColor=default;fillColor=#8C8C8C;" parent="1" vertex="1">
+          <mxGeometry x="-485" y="1715" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aWlsC6i2ldC96t2Gd4rn-59" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;MARK_LIS&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;strokeColor=#000000;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=default;labelBackgroundColor=default;fillColor=#8C8C8C;" parent="1" vertex="1">
+          <mxGeometry x="-495" y="1355" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aWlsC6i2ldC96t2Gd4rn-60" value="&lt;span style=&quot;&quot;&gt;&lt;font style=&quot;color: rgb(0, 0, 0); font-size: 15px;&quot;&gt;&lt;b style=&quot;&quot;&gt;LIS_DP&lt;/b&gt;&lt;/font&gt;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;&quot;&gt;&lt;font style=&quot;color: rgb(0, 0, 0); font-size: 10px;&quot;&gt;&lt;b style=&quot;&quot;&gt;the actual largest increasing subsequence algo&lt;/b&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#2D7600;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;labelBackgroundColor=none;fillColor=#60a917;" parent="1" vertex="1">
+          <mxGeometry x="-730" y="1355" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aWlsC6i2ldC96t2Gd4rn-68" value="" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF0011;strokeWidth=4;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;labelBackgroundColor=default;endArrow=classic;" parent="1" source="aWlsC6i2ldC96t2Gd4rn-62" target="aWlsC6i2ldC96t2Gd4rn-67" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aWlsC6i2ldC96t2Gd4rn-76" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF0011;strokeWidth=4;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;labelBackgroundColor=default;endArrow=classic;" parent="1" source="aWlsC6i2ldC96t2Gd4rn-62" target="aWlsC6i2ldC96t2Gd4rn-64" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aWlsC6i2ldC96t2Gd4rn-77" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FF0011;strokeWidth=4;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;labelBackgroundColor=default;endArrow=classic;entryX=0.462;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="aWlsC6i2ldC96t2Gd4rn-62" target="aWlsC6i2ldC96t2Gd4rn-78" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-129.99999999999977" y="1220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aWlsC6i2ldC96t2Gd4rn-80" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FF0011;strokeWidth=4;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;labelBackgroundColor=default;endArrow=classic;" parent="1" source="aWlsC6i2ldC96t2Gd4rn-62" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-69.99999999999977" y="1230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aWlsC6i2ldC96t2Gd4rn-62" value="FT_LIS.C" style="whiteSpace=wrap;html=1;rounded=0;strokeColor=#3700CC;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=24;fontColor=#ffffff;labelBackgroundColor=none;fillColor=#6a00ff;" parent="1" vertex="1">
+          <mxGeometry x="-520" y="1120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aWlsC6i2ldC96t2Gd4rn-64" value="SORT_STACK_TO_INDEX_ARRAY" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;labelBackgroundColor=default;" parent="1" vertex="1">
+          <mxGeometry x="-760" y="1240" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aWlsC6i2ldC96t2Gd4rn-69" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#FF0011;strokeWidth=4;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;labelBackgroundColor=default;endArrow=classic;" parent="1" source="aWlsC6i2ldC96t2Gd4rn-67" target="aWlsC6i2ldC96t2Gd4rn-60" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aWlsC6i2ldC96t2Gd4rn-70" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF0011;strokeWidth=4;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;labelBackgroundColor=default;endArrow=classic;" parent="1" target="aWlsC6i2ldC96t2Gd4rn-59" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-555" y="1315" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aWlsC6i2ldC96t2Gd4rn-67" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;FIND_LIS&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;strokeColor=#006EAF;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=24;fontColor=#000000;labelBackgroundColor=none;fillColor=#1ba1e2;" parent="1" vertex="1">
+          <mxGeometry x="-610" y="1245" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aWlsC6i2ldC96t2Gd4rn-74" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;strokeColor=#001DBC;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;labelBackgroundColor=default;edgeStyle=orthogonalEdgeStyle;fillColor=#0050ef;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-495" y="1260" as="sourcePoint" />
+            <mxPoint x="-410" y="1260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aWlsC6i2ldC96t2Gd4rn-75" value="&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;MAKES:&amp;nbsp;&lt;span style=&quot;background-color: transparent;&quot;&gt;lenght and prev arrays to be used in other functions&lt;/span&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#006EAF;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;labelBackgroundColor=none;fillColor=#1AB6FF;gradientColor=default;" parent="1" vertex="1">
+          <mxGeometry x="-445" y="1220" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="aWlsC6i2ldC96t2Gd4rn-78" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;MARK_LIS_NODES&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;&quot; size=&quot;1&quot;&gt;actually mark the elements of the LIS in the nodes&lt;/font&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;labelBackgroundColor=default;fillColor=#808080;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="-310" y="1225" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aWlsC6i2ldC96t2Gd4rn-83" value="" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF0011;strokeWidth=4;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;labelBackgroundColor=default;endArrow=classic;" parent="1" source="aWlsC6i2ldC96t2Gd4rn-81" target="aWlsC6i2ldC96t2Gd4rn-82" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aWlsC6i2ldC96t2Gd4rn-81" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;PUSH_NON_LIS_TO_B&lt;/b&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;strokeColor=#6F0000;strokeWidth=2;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;labelBackgroundColor=none;fillColor=#a20025;" parent="1" vertex="1">
+          <mxGeometry x="-170" y="1230" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="aWlsC6i2ldC96t2Gd4rn-82" value="if the nodes have keep = 0, push to b." style="whiteSpace=wrap;html=1;fillColor=#a20025;strokeColor=#6F0000;fontColor=#ffffff;rounded=0;strokeWidth=2;labelBackgroundColor=none;" parent="1" vertex="1">
+          <mxGeometry x="-150" y="1340" width="120" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

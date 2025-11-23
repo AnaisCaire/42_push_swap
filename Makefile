@@ -6,7 +6,7 @@
 #    By: anais <anais@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/07 12:56:25 by acaire-d          #+#    #+#              #
-#    Updated: 2025/11/23 16:49:25 by anais            ###   ########.fr        #
+#    Updated: 2025/11/23 22:51:51 by anais            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ SRC		= main.c \
 		  small_sort.c \
 		  ft_push.c \
 		  ft_LIS.c \
-		  ft_LIS_utils.c
+		  ft_LIS_utils.c \
+		  ft_stack_to_array.c
 
 OBJ		= $(SRC:.c=.o)
 

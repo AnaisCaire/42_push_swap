@@ -6,13 +6,13 @@
 /*   By: anais <anais@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 11:00:12 by anais             #+#    #+#             */
-/*   Updated: 2025/11/22 16:16:22 by anais            ###   ########.fr       */
+/*   Updated: 2025/11/23 17:29:07 by anais            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void print_stack(const char *name, t_node *s)
+static void print_stack(const char *name, t_node *s) //temporary function
 {
     printf("%s:\n", name);
     while (s)
@@ -44,7 +44,7 @@ int	main(int argc, char **argv)
 					five_sort(&a, &b);
 				else
 				{
-					pushswap(&a, &b);
+					ft_LIS(&a, &b);
 					print_stack("A", a);
 					print_stack("B", b);
 				}

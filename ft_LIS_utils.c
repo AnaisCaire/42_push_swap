@@ -6,7 +6,7 @@
 /*   By: anais <anais@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 12:58:44 by anais             #+#    #+#             */
-/*   Updated: 2025/11/22 16:08:09 by anais            ###   ########.fr       */
+/*   Updated: 2025/11/23 19:11:54 by anais            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,35 +43,32 @@ void	sort_stack_to_arr(t_node *a, int len)
 {
 	int		i;
 	int		*arr;
-	t_node	*tmp;
 
 	if (!a || len <= 0)
 		return ;
 	arr = malloc(sizeof(int) * len);
 	if (!arr)
 		return ;
-	tmp = a;
 	i = 0;
-	while (tmp)
+	while (a)
 	{
-		arr[i++] = tmp->value;
-		tmp = tmp->next;
+		arr[i++] = a->value;
+		a = a->next;
 	}
 	sort_array(arr, len);
-	tmp = a;
-	while (tmp)
+	while (a)
 	{
 		i = 0;
 		while (i < len)
 		{
-			if (arr[i] == tmp->value)
+			if (arr[i] == a->value)
 			{
-				tmp->index = i;
+				a->index = i;
 				break ;
 			}
 			i++;
 		}
-		tmp = tmp->next;
+		a = a->next;
 	}
 	free(arr);
 }
@@ -93,6 +90,9 @@ int		*stack_to_index_array(t_node *a, int len)
 	return (arr);
 }
 
+//the Dynamic Programming function 
+//that computes the Longest Increasing Subsequence
+// fills len and prev
 void	lis_dp(int *idx, int size, int *len, int *prev)
 {
 	int	i;
@@ -117,32 +117,57 @@ void	lis_dp(int *idx, int size, int *len, int *prev)
 	}
 }
 
+
+// helper 1: allocate and init in_lis[]
+static int	*alloc_in_lis(int size)
+{
+	int	*in_lis;
+	int	i;
+
+	in_lis = malloc(sizeof(int) * size);
+	if (!in_lis)
+		return (NULL);
+	i = 0;
+	while (i < size)
+	{
+		in_lis[i] = 0;
+		i++;
+	}
+	return (in_lis);
+}
+
+// helper 2: find best_end and best_len from len[]
+static int	get_best_end(int *len, int size, int *best_len)
+{
+	int	i;
+	int	best_end;
+
+	i = 0;
+	*best_len = 0;
+	best_end = 0;
+	while (i < size)
+	{
+		if (len[i] > *best_len)
+		{
+			*best_len = len[i];
+			best_end = i;
+		}
+		i++;
+	}
+	return (best_end);
+}
+
 int	mark_lis(int *idx, int size, int *len, int *prev, int **lis_arr)
 {
 	int	*in_lis;
 	int	best_len;
 	int	best_end;
 	int	k;
-	int	i;
 
-	in_lis = malloc(sizeof(int) * size);
+	in_lis = alloc_in_lis(size);
 	if (!in_lis)
 		return (0);
-	i = 0;
-	while (i < size)
-		in_lis[i++] = 0;
-	best_len = 0;
-	best_end = 0;
-	i = 0;
-	while (i < size)
-	{
-		if (len[i] > best_len)
-		{
-			best_len = len[i];
-			best_end = i;
-		}
-		i++;
-	}
+	best_end = get_best_end(len, size, &best_len);
 	k = best_end;
 	while (k != -1)
 	{

@@ -6,13 +6,15 @@
 #    By: anais <anais@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/07 12:56:25 by acaire-d          #+#    #+#              #
-#    Updated: 2025/11/22 15:55:23 by anais            ###   ########.fr        #
+#    Updated: 2025/11/23 16:49:25 by anais            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= push_swap
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
+
+#make a folder for the .o files
 
 SRC		= main.c \
 		  ft_operations.c \

@@ -6,7 +6,7 @@
 /*   By: anais <anais@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 13:51:28 by anais             #+#    #+#             */
-/*   Updated: 2025/11/22 16:17:10 by anais            ###   ########.fr       */
+/*   Updated: 2025/11/23 18:32:30 by anais            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	find_lis(int *idx, int size, int **lis_arr)
 	return (best);
 }
 
+//mark the elements that belong to the LIS
 void    mark_lis_nodes(t_node *a, int *in_lis)
 {
     while (a)
@@ -62,14 +63,14 @@ void    push_non_lis_to_b(t_node **a, t_node **b, int lis_len)
     }
 }
 
-void	pushswap(t_node **a, t_node **b)
+void	ft_LIS(t_node **a, t_node **b)
 {
 	int		size;
 	int		*idx;
 	int		*lis_arr;
 	int		lis_len;
 
-	if (a == NULL || *a == NULL)
+	if (a == NULL || *a == NULL || b == NULL)
 		return ;
 	size = ft_stacklen(*a);
 	sort_stack_to_arr(*a, size);

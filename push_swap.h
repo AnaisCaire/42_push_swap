@@ -32,6 +32,8 @@ void	free_error(t_node **stack, char **argv);
 int		ft_stacklen(t_node *stack);
 void	pb(t_node **a, t_node **b);
 void	pa(t_node **a, t_node **b);
+
+
 void    push_non_lis_to_b(t_node **a, t_node **b, int lis_len);
 void    mark_lis_nodes(t_node *a, int *in_lis);
 int		find_lis(int *idx, int size, int **lis_arr);
@@ -39,7 +41,7 @@ int		mark_lis(int *idx, int size, int *len, int *prev, int **lis_arr);
 void	lis_dp(int *idx, int size, int *len, int *prev);
 int		*stack_to_index_array(t_node *a, int len);
 void	sort_stack_to_arr(t_node *a, int len);
-void	pushswap(t_node **a, t_node **b);
+void	ft_LIS(t_node **a, t_node **b);
 
 
 #endif

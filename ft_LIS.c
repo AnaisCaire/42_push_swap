@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_LIS.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anais <anais@student.42.fr>                +#+  +:+       +#+        */
+/*   By: acaire-d <acaire-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 13:51:28 by anais             #+#    #+#             */
-/*   Updated: 2025/11/23 22:50:33 by anais            ###   ########.fr       */
+/*   Updated: 2025/11/24 11:45:46 by acaire-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,7 @@ void	ft_LIS(t_node **a, t_node **b)
 	if (a == NULL || *a == NULL || b == NULL)
 		return ;
 	size = ft_stacklen(*a);
-	sort_stack_to_arr(*a, size);
-	idx = stack_to_index_array(*a, size);
+	idx = build_index_array(*a, size);
 	if (!idx)
 		return ;
 	lis_arr = NULL;

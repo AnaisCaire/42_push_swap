@@ -13,6 +13,10 @@ typedef struct s_node
 	int				keep;
 	int				index; // placement
 	int				lis; // 1 if its LIS
+	int				pos;
+	int				target_pos;
+	int				cost_b;
+	int				cost_a;
 	struct s_node 	*next;
 	struct s_node 	*prev;
 }					t_node;
@@ -33,6 +37,7 @@ int		ft_stacklen(t_node *stack);
 void	pb(t_node **a, t_node **b);
 void	pa(t_node **a, t_node **b);
 
+//longest inscresing subsequence
 
 void    push_non_lis_to_b(t_node **a, t_node **b, int lis_len);
 void    mark_lis_nodes(t_node *a, int *in_lis);
@@ -42,5 +47,9 @@ void	lis_dp(int *idx, int size, int *len, int *prev);
 void	ft_LIS(t_node **a, t_node **b);
 int		*build_index_array(t_node *a, int size);
 
+// the greedy algo
+
+void	ft_get_pos(t_node *a, t_node *b);
+void	ft_set_target(t_node *a, t_node *b);
 
 #endif

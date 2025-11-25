@@ -1,17 +1,17 @@
 
 
-So this is the first project of 42 where you acctually need to sit down and figure out what 
+So this is the first project of 42 where you actually need to sit down and figure out what 
 you want to do.
 I made some diagrams and documentation to feel less lost.
 so here is the general pipeline of my project:
 
-for the more difficult parts, i am some seperate diagrams to better understand them.
+for the difficult parts, I made some seperate diagrams to better understand them.
 
-mettre diagram pipeline.
+![pipeline diagram](diagrams/pipeline.png)
 
 Now, the real push_swap algo (for 5 nbs and +).
 first of all, 
-its recommended and alot easier to work with the index of each value and not the value itself.
+its recommended and, alot easier to work with the index of each value and not the value itself.
 the index is the placement of the value if they were sorted.
 
 here is a diagram that shows you how i computed that:
@@ -31,5 +31,5 @@ Here is the logic:
 ![Greedy insertion diagram](diagrams/greedyinsertion2.png)
 
 
-here is some reference for my project: 
+Here is some reference for my project: 
 https://medium.com/@dansylvain84/my-implementation-of-the-42-push-swap-project-2706fd8c2e9f

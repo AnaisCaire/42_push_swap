@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_operations.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anais <anais@student.42.fr>                +#+  +:+       +#+        */
+/*   By: acaire-d <acaire-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 14:38:00 by acaire-d          #+#    #+#             */
-/*   Updated: 2025/11/21 13:08:38 by anais            ###   ########.fr       */
+/*   Updated: 2025/11/25 12:10:32 by acaire-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,19 @@ void	ra(t_node **a)
 {
 	rotate(a);
 	write(1, "ra\n", 3);
+}
+
+void	rb(t_node **b)
+{
+	rotate(b);
+	write(1, "rb\n", 3);
+}
+
+void	rr(t_node **a, t_node **b)
+{
+	rotate(a);
+	rotate(b);
+	write(1, "rr\n", 3);
 }
 
 static void	swap(t_node **stack)
@@ -78,4 +91,17 @@ void	rra(t_node **a)
 {
 	reverse_rotate(a);
 	write(1, "rra\n", 4);
+}
+
+void	rrb(t_node **b)
+{
+	reverse_rotate(b);
+	write(1, "rrb\n", 4);
+}
+
+void	rrr(t_node **a, t_node **b)
+{
+	reverse_rotate(a);
+	reverse_rotate(b);
+	write(1, "rrr\n", 4);
 }

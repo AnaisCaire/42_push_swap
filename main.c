@@ -3,24 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anais <anais@student.42.fr>                +#+  +:+       +#+        */
+/*   By: acaire-d <acaire-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 11:00:12 by anais             #+#    #+#             */
-/*   Updated: 2025/11/23 17:29:07 by anais            ###   ########.fr       */
+/*   Updated: 2025/11/25 12:04:06 by acaire-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void print_stack(const char *name, t_node *s) //temporary function
-{
-    printf("%s:\n", name);
-    while (s)
-    {
-        printf("  val=%d idx=%d keep=%d\n", s->value, s->index, s->keep);
-        s = s->next;
-    }
-}
 
 int	main(int argc, char **argv)
 {
@@ -44,9 +35,7 @@ int	main(int argc, char **argv)
 					five_sort(&a, &b);
 				else
 				{
-					ft_LIS(&a, &b);
-					print_stack("A", a);
-					print_stack("B", b);
+					ft_greedy(&a, &b);
 				}
 			}
 	}

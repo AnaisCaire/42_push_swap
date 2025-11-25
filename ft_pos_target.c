@@ -6,7 +6,7 @@
 /*   By: acaire-d <acaire-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 15:11:41 by acaire-d          #+#    #+#             */
-/*   Updated: 2025/11/24 17:23:34 by acaire-d         ###   ########.fr       */
+/*   Updated: 2025/11/25 12:05:09 by acaire-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,8 @@ static int		find_target_pos_in_a(t_node *a, int b_index)
 	if (target_idx != 2147483647)
 		return(target_pos);
 	else
-		target_pos = smallest_index_a(&a);
-		return (target_pos);
+		target_pos = smallest_index_a(a);
+	return (target_pos);
 }
 
 void	ft_set_target(t_node *a, t_node *b)
@@ -86,7 +86,7 @@ void	ft_set_target(t_node *a, t_node *b)
 	curr = b;
 	while (curr)
 	{
-		curr->target_pos = find_target_pos_in_a(&a, curr->index);
+		curr->target_pos = find_target_pos_in_a(a, curr->index);
 		curr = curr->next;
 	}
 }

@@ -21,9 +21,17 @@ typedef struct s_node
 	struct s_node 	*prev;
 }					t_node;
 
+// operations
+
 void	ra(t_node **a);
+void	rb(t_node **b);
+void	rr(t_node **a, t_node **b);
 void	sa(t_node **a);
 void	rra(t_node **a);
+void	rrb(t_node **b);
+void	rrr(t_node **a, t_node **b);
+
+
 void	small_sort(t_node **a);
 void	five_sort(t_node **a, t_node **b);
 char	**ft_split(char *str);
@@ -49,7 +57,11 @@ int		*build_index_array(t_node *a, int size);
 
 // the greedy algo
 
-void	ft_get_pos(t_node *a, t_node *b);
-void	ft_set_target(t_node *a, t_node *b);
+void		ft_greedy(t_node **a, t_node **b);
+void		ft_get_pos(t_node *a, t_node *b);
+void		ft_set_target(t_node *a, t_node *b);
+void		set_cost(t_node *a, t_node *b);
+t_node 		*get_cheapest_node(t_node *b);
+void 		ft_rotation(t_node **a, t_node **b, t_node *best);
 
 #endif

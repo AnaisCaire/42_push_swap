@@ -6,7 +6,7 @@
 #    By: acaire-d <acaire-d@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/07 12:56:25 by acaire-d          #+#    #+#              #
-#    Updated: 2025/11/24 15:12:10 by acaire-d         ###   ########.fr        #
+#    Updated: 2025/11/25 12:03:26 by acaire-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,10 @@ SRC		= main.c \
 		  ft_LIS.c \
 		  ft_LIS_utils.c \
 		  ft_stack_to_array.c \
-		  ft_pos_target.c
+		  ft_pos_target.c \
+		  ft_costs.c \
+		  ft_rotations.c \
+		  ft_greedy.c
 
 OBJ		= $(SRC:.c=.o)
 

@@ -63,5 +63,6 @@ void		ft_set_target(t_node *a, t_node *b);
 void		set_cost(t_node *a, t_node *b);
 t_node 		*get_cheapest_node(t_node *b);
 void 		ft_rotation(t_node **a, t_node **b, t_node *best);
+void	ft_final_rotate(t_node **a);
 
 #endif

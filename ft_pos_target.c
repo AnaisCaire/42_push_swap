@@ -6,7 +6,7 @@
 /*   By: acaire-d <acaire-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 15:11:41 by acaire-d          #+#    #+#             */
-/*   Updated: 2025/11/25 12:05:09 by acaire-d         ###   ########.fr       */
+/*   Updated: 2025/11/25 13:16:56 by acaire-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,7 @@ static int		find_target_pos_in_a(t_node *a, int b_index)
 	curr = a;
 	while (curr)
 	{
-//how does that ensure that its the smallest in a that is strictly rater than b_index		
-		if (curr->index > b_index && target_pos < target_idx) 
+		if (curr->index > b_index && curr->index < target_idx) 
 		{
 			target_idx = curr->index;
 			target_pos = curr->pos;
@@ -74,8 +73,7 @@ static int		find_target_pos_in_a(t_node *a, int b_index)
 	}
 	if (target_idx != 2147483647)
 		return(target_pos);
-	else
-		target_pos = smallest_index_a(a);
+	target_pos = smallest_index_a(a);
 	return (target_pos);
 }
 

@@ -6,7 +6,7 @@
 /*   By: acaire-d <acaire-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 14:38:00 by acaire-d          #+#    #+#             */
-/*   Updated: 2025/11/25 12:10:32 by acaire-d         ###   ########.fr       */
+/*   Updated: 2025/11/25 12:53:56 by acaire-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ static void	swap(t_node **stack)
 		return ;
 	first = *stack;
 	second = first->next;
+	
 	temp = first->value;
 	first->value = second->value;
 	second->value = temp;

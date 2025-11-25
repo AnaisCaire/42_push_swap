@@ -6,7 +6,7 @@
 /*   By: acaire-d <acaire-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 10:49:57 by acaire-d          #+#    #+#             */
-/*   Updated: 2025/11/25 12:05:47 by acaire-d         ###   ########.fr       */
+/*   Updated: 2025/11/25 13:27:52 by acaire-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ void	set_cost(t_node *a, t_node *b)
 
 	size_b = ft_stacklen(b);
 	size_a = ft_stacklen(a);
-	curr =  a;
+	curr =  b;
 	while(curr)
 	{
 		curr->cost_b = curr->pos;
 		if (curr->pos > size_b/2)
 			curr->cost_b = curr->pos - size_b;
 		curr->cost_a = curr->target_pos;
-		if (curr->target_pos > size_b/2)
+		if (curr->target_pos > size_a/2)
 			curr->cost_a = curr->target_pos - size_a;
 		curr = curr->next;
 	}

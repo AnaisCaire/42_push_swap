@@ -6,14 +6,14 @@
 /*   By: acaire-d <acaire-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 11:00:12 by anais             #+#    #+#             */
-/*   Updated: 2025/11/25 14:30:30 by acaire-d         ###   ########.fr       */
+/*   Updated: 2025/11/25 14:48:22 by acaire-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 
-/* void    print_stack(char *name, t_node *stack)
+void    print_stack(char *name, t_node *stack)
 {
     t_node  *curr;
 
@@ -25,7 +25,7 @@
         curr = curr->next;
     }
     printf("\n");
-} */
+}
 
 
 int	main(int argc, char **argv)
@@ -33,12 +33,27 @@ int	main(int argc, char **argv)
 	t_node	*a;
 	t_node	*b;
 	char	**split;
+	int		i;
 
 	a = NULL;
 	b = NULL;
 	if (argc >= 2)
 	{
-		split = ft_split(argv[1]);
+	    if (argc == 2)
+            split = ft_split(argv[1]);
+        else
+        {
+            split = malloc((argc) * sizeof(char *));
+            if (!split)
+                return (1);
+            i = 1;
+            while (i < argc)
+            {
+                split[i - 1] = argv[i];
+                i++;
+            }
+        	split[argc - 1] = NULL;
+        }
 		ft_stackinit(&a, split);
 		if (!ft_sorted(a))
 			{
@@ -51,7 +66,7 @@ int	main(int argc, char **argv)
 				else
 				{	
 					ft_greedy(&a, &b);
-					//print_stack("A_final", a);
+					print_stack("A_final", a);
 				}
 			}
 	}

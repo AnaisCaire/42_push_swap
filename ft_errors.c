@@ -6,7 +6,7 @@
 /*   By: anais <anais@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 13:50:43 by acaire-d          #+#    #+#             */
-/*   Updated: 2025/11/21 12:31:41 by anais            ###   ########.fr       */
+/*   Updated: 2025/11/26 14:40:22 by anais            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	duplicate_check(t_node *a, long nb)
 	return (1);
 }
 
-static void	ft_lstfree(t_node **stack)
+void	ft_lstfree(t_node **stack)
 {
 	t_node	*tmp;
 
@@ -53,7 +53,7 @@ static void	ft_lstfree(t_node **stack)
 	}
 }
 
-static void	ft_freematrix(char **argv)
+void	ft_freematrix(char **argv)
 {
 	int	i;
 

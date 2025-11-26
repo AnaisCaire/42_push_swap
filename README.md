@@ -16,13 +16,13 @@ the subject and the checker makes us understand that we can input:
 
 Here is how I computed that:
 
-insert algo
+![pipeline diagram](diagrams/normalizeinput.png)
 
 
 ## Now, the real push_swap algo (for 5 nbs and +).
 
 
-first of all, 
+First of all, 
 
 its recommended and, alot easier to work with the index of each value and not the value itself.
 the index is the placement of the value if they were sorted.
@@ -36,7 +36,7 @@ here is a diagram that shows you how i computed that:
 
 ![build index array diagram](diagrams/index_array.png)
 
-## ok, now the largest increasing subsequence is actually pretty hard to code.
+## Ok, the largest increasing subsequence is actually pretty hard to code.
 
 It refers to the longest sequence of numbers that is strictly increasing. the numbers DO NOT have to be next to each other.
 
@@ -46,7 +46,7 @@ in -> 5 2 8 6 3 6 9 7, one of the LIS is -> 2 3 6 9 (length 4).
 
 here is a diagram to better understand the coding part:
 
-![LIS diagram](diagrams/ft_LIS_prt1.png)
+![LIS diagram](diagrams/LIS.png)
 
 if you still dont understand, watch this video...
  https://www.youtube.com/watch?v=E6us4nmXTHs&t=546s 
@@ -57,6 +57,13 @@ Meaning, what value should we insert that will be the cheapest (less moves).
 Here is the logic:
 
 ![Greedy insertion diagram](diagrams/greedyinsertion2.png)
+
+
+#Example
+
+Finally, if you still have problems understanding the logic behind the sorting algos i used,
+
+here is a step by step visual explanation:
 
 
 Here is some reference for my project: 

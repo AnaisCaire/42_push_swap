@@ -3,14 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: acaire-d <acaire-d@student.42.fr>          +#+  +:+       +#+         #
+#    By: anais <anais@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/07 12:56:25 by acaire-d          #+#    #+#              #
-#    Updated: 2025/11/25 12:03:26 by acaire-d         ###   ########.fr        #
+#    Updated: 2025/11/26 14:34:06 by anais            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= push_swap
+OBJ_DIR	= bin
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 
@@ -30,24 +31,29 @@ SRC		= main.c \
 		  ft_pos_target.c \
 		  ft_costs.c \
 		  ft_rotations.c \
-		  ft_greedy.c
+		  ft_greedy.c \
+		  ft_input.c
 
-OBJ		= $(SRC:.c=.o)
+OBJ		= $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 
 OBJS_ALL = $(OBJ)
 
 all: $(NAME)
 
-$(NAME): $(OBJS_ALL)
-	$(CC) $(CFLAGS) $(OBJS_ALL) -o $(NAME)
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
 
-%.o: %.c push_swap.h
+$(NAME): $(OBJ_DIR) $(OBJS_ALL)
+	$(CC) $(CFLAGS) $(OBJS_ALL) -o $@
+
+$(OBJ_DIR)/%.o: %.c push_swap.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJ)
 
 fclean: clean
+	rm -rf $(OBJ_DIR)
 	rm -f $(NAME)
 
 re: fclean all

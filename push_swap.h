@@ -21,6 +21,11 @@ typedef struct s_node
 	struct s_node 	*prev;
 }					t_node;
 
+char	**normalize_input(int argc, char **argv);
+void	ft_lstfree(t_node **stack);
+void ft_freeall(t_node *a, t_node *b, char **str);
+
+
 // operations
 
 void	ra(t_node **a);
@@ -41,6 +46,7 @@ void	ft_lstaddnode(t_node **stack, long int nb);
 int		syntax_error(char *strnb);
 int		duplicate_check(t_node *a, long nb);
 void	free_error(t_node **stack, char **argv);
+void	ft_freematrix(char **argv);
 int		ft_stacklen(t_node *stack);
 void	pb(t_node **a, t_node **b);
 void	pa(t_node **a, t_node **b);

@@ -6,7 +6,7 @@
 /*   By: anais <anais@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 11:19:31 by acaire-d          #+#    #+#             */
-/*   Updated: 2025/11/21 13:10:56 by anais            ###   ########.fr       */
+/*   Updated: 2025/11/26 14:46:52 by anais            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,11 @@ int		ft_stacklen(t_node *stack)
 		stack = stack->next;
 	}
 	return (len);
+}
+
+void ft_freeall(t_node *a, t_node *b, char **str)
+{
+	ft_freematrix(str);
+	ft_lstfree(&a);
+	ft_lstfree(&b);
 }

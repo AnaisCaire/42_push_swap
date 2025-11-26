@@ -6,7 +6,7 @@
 /*   By: anais <anais@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 11:19:31 by acaire-d          #+#    #+#             */
-/*   Updated: 2025/11/26 14:46:52 by anais            ###   ########.fr       */
+/*   Updated: 2025/11/26 17:28:32 by anais            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_lstaddnode(t_node **stack, long int nb)
 	t_node *node;
 	t_node *last_node;
 
-	if (stack == NULL) //stack is already de double pointer dont forget = begining 
+	if (stack == NULL)
 		return ;
 	node = malloc(sizeof(t_node));
 	if(!node)
@@ -35,11 +35,10 @@ void	ft_lstaddnode(t_node **stack, long int nb)
 	node->value = nb;
 	node->keep = 0;
 	node->index = 0;
-	node->lis = 0;
-	if (*stack == NULL) //this refers to the list
+	if (*stack == NULL)
 	{
-		*stack = node; //node is now the head
-		node->prev = NULL;	//make sure there is no previous node
+		*stack = node;
+		node->prev = NULL;
 	}
 	else
 	{

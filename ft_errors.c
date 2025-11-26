@@ -6,7 +6,7 @@
 /*   By: anais <anais@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 13:50:43 by acaire-d          #+#    #+#             */
-/*   Updated: 2025/11/26 14:40:22 by anais            ###   ########.fr       */
+/*   Updated: 2025/11/26 17:27:16 by anais            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	ft_freematrix(char **argv)
 		return ;
 	while (argv[i])
 		free(argv[i++]);
-	free(argv); // dont forget to free the whole empty strings
+	free(argv);
 }
 
 void	free_error(t_node **stack, char **argv)

@@ -12,6 +12,27 @@
 
 #include "push_swap.h"
 
+static void	swap(t_node **stack)
+{
+	t_node	*first;
+	t_node	*second;
+	int		temp;
+
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+		return ;
+	first = *stack;
+	second = first->next;
+	temp = first->value;
+	first->value = second->value;
+	second->value = temp;
+}
+
+void	sa(t_node **a)
+{
+	swap(a);
+	write(1, "sa\n", 3);
+}
+
 void	pb(t_node **a, t_node **b)
 {
 	t_node	*node;

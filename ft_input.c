@@ -22,23 +22,24 @@ static size_t  ft_strlen(const char *str)
         return (len);
 }
 
-static char	*join_args(int argc, char **argv)
+static size_t	total_args_len(int argc, char **argv)
 {
-	char	*joined;
 	size_t	total;
-	size_t	pos;
-	size_t	j;
 	int		i;
 
 	total = 0;
 	i = 1;
 	while (i < argc)
 		total += ft_strlen(argv[i++]) + 1;
-	if (total == 0)
-		return (NULL);
-	joined = malloc(total + 1);
-	if (!joined)
-		return (NULL);
+	return (total);
+}
+
+static void	fill_joined(char *joined, int argc, char **argv)
+{
+	size_t	pos;
+	size_t	j;
+	int		i;
+
 	i = 1;
 	pos = 0;
 	while (i < argc)
@@ -51,6 +52,20 @@ static char	*join_args(int argc, char **argv)
 		i++;
 	}
 	joined[pos] = '\0';
+}
+
+static char	*join_args(int argc, char **argv)
+{
+	char	*joined;
+	size_t	total;
+
+	total = total_args_len(argc, argv);
+	if (total == 0)
+		return (NULL);
+	joined = malloc(total + 1);
+	if (!joined)
+		return (NULL);
+	fill_joined(joined, argc, argv);
 	return (joined);
 }
 

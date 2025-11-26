@@ -6,7 +6,7 @@
 /*   By: anais <anais@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 13:51:28 by anais             #+#    #+#             */
-/*   Updated: 2025/11/26 13:37:11 by anais            ###   ########.fr       */
+/*   Updated: 2025/11/26 17:27:58 by anais            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int	find_lis(int *idx, int size, int **lis_arr)
 	return (best);
 }
 
-//mark the elements that belong to the LIS
 void    mark_lis_nodes(t_node *a, int *in_lis)
 {
     while (a)

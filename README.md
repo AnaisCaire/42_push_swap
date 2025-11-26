@@ -2,6 +2,11 @@
 So this is the first project of 42 where you actually need to sit down and figure out what 
 you want to do.
 I made some diagrams and documentation to feel less lost.
+
+# Results
+
+Ran my code (with a sub program) 100 times with different ranges and different 500 numbers and i get an average of 5056.54 moves. 
+
 so here is the general pipeline of my project:
 
 for the difficult parts, I made some seperate diagrams to better understand them.
@@ -57,14 +62,6 @@ Meaning, what value should we insert that will be the cheapest (less moves).
 Here is the logic:
 
 ![Greedy insertion diagram](diagrams/greedyinsertion2.png)
-
-
-#Example
-
-Finally, if you still have problems understanding the logic behind the sorting algos i used,
-
-here is a step by step visual explanation:
-
 
 Here is some reference for my project: 
 https://medium.com/@dansylvain84/my-implementation-of-the-42-push-swap-project-2706fd8c2e9f

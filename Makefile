@@ -6,7 +6,7 @@
 #    By: anais <anais@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/07 12:56:25 by acaire-d          #+#    #+#              #
-#    Updated: 2025/11/26 14:34:06 by anais            ###   ########.fr        #
+#    Updated: 2025/11/26 17:48:27 by anais            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,13 +18,14 @@ CFLAGS	= -Wall -Wextra -Werror
 #make a folder for the .o files
 
 SRC		= main.c \
-		  ft_operations.c \
+		  ft_rotate.c \
 		  ft_stackinit.c \
 		  ft_split.c \
 		  ft_errors.c \
 		  ft_lstaddnode.c \
 		  small_sort.c \
-		  ft_push.c \
+		  ft_push_swap.c \
+		  ft_reverse_rotate.c \
 		  ft_LIS.c \
 		  ft_LIS_utils.c \
 		  ft_stack_to_array.c \

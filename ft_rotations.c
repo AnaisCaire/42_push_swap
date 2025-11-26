@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rotations.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acaire-d <acaire-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anais <anais@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 11:46:32 by acaire-d          #+#    #+#             */
-/*   Updated: 2025/11/25 14:24:16 by acaire-d         ###   ########.fr       */
+/*   Updated: 2025/11/26 18:01:18 by anais            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ static void	rotate_both(t_node **a, t_node **b, int *cost_a, int *cost_b)
 {
 	while (*cost_a > 0 && *cost_b > 0)
     {
-        rr(a, b);     // both up
+        rr(a, b);
         (*cost_a)--;
         (*cost_b)--;
     }
     while (*cost_a < 0 && *cost_b < 0)
     {
-        rrr(a, b);    // both down
+        rrr(a, b);
         (*cost_a)++;
         (*cost_b)++;
     }

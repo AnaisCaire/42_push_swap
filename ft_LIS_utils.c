@@ -6,16 +6,12 @@
 /*   By: anais <anais@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 12:58:44 by anais             #+#    #+#             */
-/*   Updated: 2025/11/23 22:50:28 by anais            ###   ########.fr       */
+/*   Updated: 2025/11/26 17:27:52 by anais            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-//the Dynamic Programming function 
-//that computes the Longest Increasing Subsequence
-// fills len and prev
 void	lis_dp(int *idx, int size, int *len, int *prev)
 {
 	int	i;

@@ -6,33 +6,54 @@
 /*   By: anais <anais@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 11:00:12 by anais             #+#    #+#             */
-/*   Updated: 2025/11/23 23:31:18 by anais            ###   ########.fr       */
+/*   Updated: 2025/11/26 13:37:21 by anais            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void print_stack(const char *name, t_node *s) //temporary function
+
+void    print_stack(char *name, t_node *stack)
 {
-    printf("%s:\n", name);
-    while (s)
+    t_node  *curr;
+
+    printf("%s: ", name);
+    curr = stack;
+    while (curr)
     {
-        printf("  val=%d idx=%d keep=%d\n", s->value, s->index, s->keep);
-        s = s->next;
+        printf("%d ", curr->value);
+        curr = curr->next;
     }
+    printf("\n");
 }
+
 
 int	main(int argc, char **argv)
 {
 	t_node	*a;
 	t_node	*b;
 	char	**split;
+	int		i;
 
 	a = NULL;
 	b = NULL;
 	if (argc >= 2)
 	{
-		split = ft_split(argv[1]);
+	    if (argc == 2)
+            split = ft_split(argv[1]);
+        else
+        {
+            split = malloc((argc) * sizeof(char *));
+            if (!split)
+                return (1);
+            i = 1;
+            while (i < argc)
+            {
+                split[i - 1] = argv[i];
+                i++;
+            }
+        	split[argc - 1] = NULL;
+        }
 		ft_stackinit(&a, split);
 		if (!ft_sorted(a))
 			{
@@ -43,10 +64,9 @@ int	main(int argc, char **argv)
 				else if (ft_stacklen(a) == 5)
 					five_sort(&a, &b);
 				else
-				{
-					ft_LIS(&a, &b);
-					print_stack("A", a);
-					print_stack("B", b);
+				{	
+					ft_greedy(&a, &b);
+					print_stack("A_final", a);
 				}
 			}
 	}

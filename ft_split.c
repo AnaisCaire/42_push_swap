@@ -86,7 +86,7 @@ static int	ft_fill(char *s, char **arr)
 	return (j); //better to return how many were filled after failure 
 }
 
-static void	free_partial(char **arr, int filled)
+static void	free_partial(char **arr, int filled) //ok but shouldnt we free the whole arr? why ust partial
 {
 	int	k;
 
@@ -122,15 +122,3 @@ char	**ft_split(char *str)
 	}
 	return (arr);
 }
-
-/* int  main()
-{
-	int     i = 0;
-	char    string[] = "this is a test      ok \n hahahaha";
-	char    **test = ft_split(string);
-	while(test[i])
-	{
-		printf("%s\n", test[i]);
-		i++;
-	}
-} */

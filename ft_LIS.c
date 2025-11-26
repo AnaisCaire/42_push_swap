@@ -6,7 +6,7 @@
 /*   By: anais <anais@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 13:51:28 by anais             #+#    #+#             */
-/*   Updated: 2025/11/23 23:31:56 by anais            ###   ########.fr       */
+/*   Updated: 2025/11/26 13:37:11 by anais            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,7 @@ void	ft_LIS(t_node **a, t_node **b)
 	if (a == NULL || *a == NULL || b == NULL)
 		return ;
 	size = ft_stacklen(*a);
-	sort_stack_to_arr(*a, size);
-	idx = stack_to_index_array(*a, size);
+	idx = build_index_array(*a, size);
 	if (!idx)
 		return ;
 	lis_arr = NULL;

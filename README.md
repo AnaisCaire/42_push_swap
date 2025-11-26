@@ -1,5 +1,4 @@
 
-
 So this is the first project of 42 where you actually need to sit down and figure out what 
 you want to do.
 I made some diagrams and documentation to feel less lost.
@@ -19,11 +18,17 @@ Here is how I computed that:
 
 insert algo
 
-Now, the real push_swap algo (for 5 nbs and +).
+
+//Now, the real push_swap algo (for 5 nbs and +).
+
+
 first of all, 
+
 its recommended and, alot easier to work with the index of each value and not the value itself.
 the index is the placement of the value if they were sorted.
+
 why you may ask?
+
 - having a dense and ordered range like [1,2,3,4] is alot safer and clearer than having this for example : [-2343, -54, 15, 274632]
 Now, for comparing the placements, we are sure to have values of [0, n-1] !
 
@@ -31,13 +36,15 @@ here is a diagram that shows you how i computed that:
 
 ![build index array diagram](diagrams/index_array.png)
 
-ok, now the largest increasing subsequence is actually pretty hard to code.
+//ok, now the largest increasing subsequence is actually pretty hard to code.
 
 It refers to the longest sequence of numbers that is strictly increasing. the numbers DO NOT have to be next to each other.
+
 Example,
+
 in -> 5 2 8 6 3 6 9 7, one of the LIS is -> 2 3 6 9 (length 4).
 
-here is a diagram to better understand:
+here is a diagram to better understand the coding part:
 
 ![LIS diagram](diagrams/ft_LIS_prt1.png)
 

@@ -13,6 +13,9 @@ Now, the real push_swap algo (for 5 nbs and +).
 first of all, 
 its recommended and, alot easier to work with the index of each value and not the value itself.
 the index is the placement of the value if they were sorted.
+why you may ask?
+- having a dense and ordered range like [1,2,3,4] is alot safer and clearer than having this for example : [-2343, -54, 15, 274632]
+Now, for comparing the placements, we are sure to have values of [0, n-1] !
 
 here is a diagram that shows you how i computed that:
 

@@ -5,8 +5,9 @@ I made some diagrams and documentation to feel less lost.
 
 # Results
 
-Ran my code (with a sub program) 100 times with different ranges and different 500 numbers and i get an average of 5056.54 moves. 
+Ran my code (with a sub program) **100 times** with different ranges and different 500 numbers and I get an average of **5056.54 moves**. 
 
+# Pipeline
 so here is the general pipeline of my project:
 
 for the difficult parts, I made some seperate diagrams to better understand them.
@@ -25,7 +26,6 @@ Here is how I computed that:
 
 
 ## Now, the real push_swap algo (for 5 nbs and +).
-
 
 First of all, 
 

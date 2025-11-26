@@ -19,7 +19,7 @@ Here is how I computed that:
 insert algo
 
 
-//Now, the real push_swap algo (for 5 nbs and +).
+##Now, the real push_swap algo (for 5 nbs and +).
 
 
 first of all, 
@@ -36,7 +36,7 @@ here is a diagram that shows you how i computed that:
 
 ![build index array diagram](diagrams/index_array.png)
 
-//ok, now the largest increasing subsequence is actually pretty hard to code.
+##ok, now the largest increasing subsequence is actually pretty hard to code.
 
 It refers to the longest sequence of numbers that is strictly increasing. the numbers DO NOT have to be next to each other.
 

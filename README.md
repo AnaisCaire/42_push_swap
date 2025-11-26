@@ -5,7 +5,8 @@ I made some diagrams and documentation to feel less lost.
 
 # Results
 
-Ran my code (with a sub program) **100 times** with different ranges and different 500 numbers and I get an average of **5056.54 moves**. 
+Ran my code (with a sub program) **100 times** with different ranges and different 500 numbers and I get an average of 
+**5056.54 moves**. 
 
 # Pipeline
 so here is the general pipeline of my project:
@@ -55,6 +56,7 @@ here is a diagram to better understand the coding part:
 
 if you still dont understand, watch this video...
  https://www.youtube.com/watch?v=E6us4nmXTHs&t=546s 
+# The Greedy insertion
 
 After that, we will insert the values of stack B in stack A using the greedy insertion.
 Meaning, what value should we insert that will be the cheapest (less moves).
@@ -63,5 +65,8 @@ Here is the logic:
 
 ![Greedy insertion diagram](diagrams/greedyinsertion2.png)
 
-Here is some reference for my project: 
+Here is some reference i used for my project:
+
+https://www.youtube.com/watch?v=OaG81sDEpVk&t=2945s
 https://medium.com/@dansylvain84/my-implementation-of-the-42-push-swap-project-2706fd8c2e9f
+https://www.geeksforgeeks.org/dsa/greedy-algorithms/

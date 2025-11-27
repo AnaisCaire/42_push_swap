@@ -70,5 +70,9 @@ Here is the logic:
 Here is some reference i used for my project:
 
 https://www.youtube.com/watch?v=OaG81sDEpVk&t=2945s
+
 https://medium.com/@dansylvain84/my-implementation-of-the-42-push-swap-project-2706fd8c2e9f
+
 https://www.geeksforgeeks.org/dsa/greedy-algorithms/
+
+https://www.youtube.com/watch?v=E6us4nmXTHs

@@ -3,6 +3,8 @@ So this is the first project of 42 where you actually need to sit down and figur
 you want to do.
 I made some diagrams and documentation to feel less lost.
 
+you should look at them while looking at the code.
+
 # Results
 
 Ran my code (with a sub program) **100 times** with different ranges and different 500 numbers and I get an average of 

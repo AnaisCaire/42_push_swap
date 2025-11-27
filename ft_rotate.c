@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_operations.c                                    :+:      :+:    :+:   */
+/*   ft_rotate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acaire-d <acaire-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 14:38:00 by acaire-d          #+#    #+#             */
-/*   Updated: 2025/11/25 12:53:56 by acaire-d         ###   ########.fr       */
+/*   Updated: 2025/11/27 12:57:27 by acaire-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,20 @@ void	rr(t_node **a, t_node **b)
 	rotate(a);
 	rotate(b);
 	write(1, "rr\n", 3);
+}
+
+void	rotate_both(t_node **a, t_node **b, int *cost_a, int *cost_b)
+{
+	while (*cost_a > 0 && *cost_b > 0)
+	{
+		rr(a, b);
+		(*cost_a)--;
+		(*cost_b)--;
+	}
+	while (*cost_a < 0 && *cost_b < 0)
+	{
+		rrr(a, b);
+		(*cost_a)++;
+		(*cost_b)++;
+	}
 }

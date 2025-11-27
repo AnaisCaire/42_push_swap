@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   small_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anais <anais@student.42.fr>                +#+  +:+       +#+        */
+/*   By: acaire-d <acaire-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 14:07:25 by acaire-d          #+#    #+#             */
-/*   Updated: 2025/11/22 12:40:34 by anais            ###   ########.fr       */
+/*   Updated: 2025/11/27 12:33:43 by acaire-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,20 @@ int	ft_sorted(t_node *a)
 
 static t_node	*biggest(t_node *stack)
 {
-	int 	big;
-	t_node 	*biggest_N;
+	int		big;
+	t_node	*biggest_n;
 
 	big = -2147483647;
-	while(stack)
+	while (stack)
 	{
 		if (stack->value > big)
 		{
 			big = stack->value;
-			biggest_N = stack;
+			biggest_n = stack;
 		}
 		stack = stack->next;
 	}
-	return (biggest_N);
+	return (biggest_n);
 }
 
 static void	bring_to_top(t_node **a, t_node *target)
@@ -72,7 +72,7 @@ static void	bring_to_top(t_node **a, t_node *target)
 void	small_sort(t_node **a)
 {
 	t_node	*high_node;
-	
+
 	if (*a == NULL)
 		return ;
 	high_node = biggest(*a);

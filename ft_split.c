@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: acaire-d <acaire-d@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/27 12:07:15 by acaire-d          #+#    #+#             */
+/*   Updated: 2025/11/27 12:20:02 by acaire-d         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static char	ft_strlcpy(char *dest, const char *src, int len)
@@ -62,7 +74,6 @@ static int	ft_fill(char *s, char **arr)
 
 	i = 0;
 	j = 0;
-	len = 0;
 	while (s[i])
 	{
 		len = 0;
@@ -75,30 +86,13 @@ static int	ft_fill(char *s, char **arr)
 		}
 		if (len > 0)
 		{
-			arr[j] = malloc(sizeof(*arr[j]) * (len + 1));
-			if (!arr[j])
-				return (j);
+			if (test_malloc(arr, j, len + 1))
+				return (1);
 			ft_strlcpy(arr[j], s + i - len, len + 1);
 			j++;
 		}
 	}
-	arr[j] = NULL;
-	return (j); //better to return how many were filled after failure 
-}
-
-static void	free_partial(char **arr, int filled) //ok but shouldnt we free the whole arr? why ust partial
-{
-	int	k;
-
-	if (!arr)
-		return ;
-	k = 0;
-	while (k < filled)
-	{
-		free(arr[k]);
-		k++;
-	}
-	free(arr);
+	return (0);
 }
 
 char	**ft_split(char *str)
@@ -113,12 +107,7 @@ char	**ft_split(char *str)
 	arr = malloc(sizeof(char *) * (count + 1));
 	if (!arr)
 		return (NULL);
+	arr[count] = NULL;
 	filled = ft_fill(str, arr);
-	if (filled < count && count > 0)
-	{
-		/* ft_fill filled up to index `filled` before failing */
-		free_partial(arr, filled);
-		return (NULL);
-	}
 	return (arr);
 }

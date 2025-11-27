@@ -6,27 +6,26 @@
 /*   By: acaire-d <acaire-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/23 22:50:03 by anais             #+#    #+#             */
-/*   Updated: 2025/11/24 11:51:16 by acaire-d         ###   ########.fr       */
+/*   Updated: 2025/11/27 12:35:07 by acaire-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "push_swap.h"
 
 static void	sort_array(int *arr, int len)
 {
-	int swapped;
+	int	swapped;
 	int	i;
-	int tmp;
-	
+	int	tmp;
+
 	if (!arr || len <= 1)
 		return ;
 	swapped = 1;
-	while(swapped)
+	while (swapped)
 	{
 		swapped = 0;
 		i = 0;
-		while( i < len - 1)
+		while (i < len - 1)
 		{
 			if (arr[i] > arr[i + 1])
 			{
@@ -66,12 +65,12 @@ static void	create_index(t_node *a, int *arr, int len)
 {
 	t_node	*curr;
 	int		i;
-	
+
 	curr = a;
-	while(curr)
+	while (curr)
 	{
 		i = 0;
-		while(i < len)
+		while (i < len)
 		{
 			if (arr[i] == curr->value)
 			{
@@ -84,7 +83,7 @@ static void	create_index(t_node *a, int *arr, int len)
 	}
 }
 
-static int		*stack_to_index_array(t_node *a, int len)
+static int	*stack_to_index_array(t_node *a, int len)
 {
 	int		*arr;
 	int		i;
@@ -100,7 +99,6 @@ static int		*stack_to_index_array(t_node *a, int len)
 	}
 	return (arr);
 }
-
 
 int	*build_index_array(t_node *a, int size)
 {

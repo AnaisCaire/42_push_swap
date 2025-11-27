@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_LIS_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anais <anais@student.42.fr>                +#+  +:+       +#+        */
+/*   By: acaire-d <acaire-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 12:58:44 by anais             #+#    #+#             */
-/*   Updated: 2025/11/26 17:27:52 by anais            ###   ########.fr       */
+/*   Updated: 2025/11/27 13:01:42 by acaire-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void	lis_dp(int *idx, int size, int *len, int *prev)
 		i++;
 	}
 }
-
 
 static int	*alloc_in_lis(int size)
 {
@@ -74,7 +73,7 @@ static int	get_best_end(int *len, int size, int *best_len)
 	return (best_end);
 }
 
-int	mark_lis(int *idx, int size, int *len, int *prev, int **lis_arr)
+int	mark_lis(int *idx, int size, int **dp, int **lis_arr)
 {
 	int	*in_lis;
 	int	best_len;
@@ -84,12 +83,12 @@ int	mark_lis(int *idx, int size, int *len, int *prev, int **lis_arr)
 	in_lis = alloc_in_lis(size);
 	if (!in_lis)
 		return (0);
-	best_end = get_best_end(len, size, &best_len);
+	best_end = get_best_end(dp[0], size, &best_len);
 	i = best_end;
 	while (i != -1)
 	{
 		in_lis[idx[i]] = 1;
-		i = prev[i];
+		i = dp[1][i];
 	}
 	*lis_arr = in_lis;
 	return (best_len);

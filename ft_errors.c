@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_errors.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anais <anais@student.42.fr>                +#+  +:+       +#+        */
+/*   By: acaire-d <acaire-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 13:50:43 by acaire-d          #+#    #+#             */
-/*   Updated: 2025/11/26 17:27:16 by anais            ###   ########.fr       */
+/*   Updated: 2025/11/27 13:00:58 by acaire-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	syntax_error(char *strnb)
 
 int	duplicate_check(t_node *a, long nb)
 {
-	while(a)
+	while (a)
 	{
 		if (a->value == nb)
 			return (0);

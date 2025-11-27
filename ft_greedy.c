@@ -12,17 +12,16 @@
 
 #include "push_swap.h"
 
-
 void	ft_greedy(t_node **a, t_node **b)
 {
 	t_node	*best;
 
-	ft_LIS(a, b);
+	ft_lis(a, b);
 	while (*b)
 	{
 		ft_get_pos(*a, *b);
 		ft_set_target(*a, *b);
-		set_cost(*a, *b);	   
+		set_cost(*a, *b);
 		best = get_cheapest_node(*b);
 		ft_rotation(a, b, best);
 		pa(a, b);

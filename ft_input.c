@@ -3,26 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_input.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anais <anais@student.42.fr>                +#+  +:+       +#+        */
+/*   By: acaire-d <acaire-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 14:32:24 by anais             #+#    #+#             */
-/*   Updated: 2025/11/26 15:15:16 by anais            ###   ########.fr       */
+/*   Updated: 2025/11/27 12:58:22 by acaire-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static size_t  ft_strlen(const char *str)
+static size_t	ft_strlen(const char *str)
 {
-        size_t  len;
+	size_t	len;
 
-        len = 0;
-        while (str[len])
-                len++;
-        return (len);
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
 }
 
-static size_t	total_args_len(int argc, char **argv)
+static size_t	ft_arglen(int argc, char **argv)
 {
 	size_t	total;
 	int		i;
@@ -59,7 +59,7 @@ static char	*join_args(int argc, char **argv)
 	char	*joined;
 	size_t	total;
 
-	total = total_args_len(argc, argv);
+	total = ft_arglen(argc, argv);
 	if (total == 0)
 		return (NULL);
 	joined = malloc(total + 1);

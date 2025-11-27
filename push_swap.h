@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: acaire-d <acaire-d@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/27 12:19:17 by acaire-d          #+#    #+#             */
+/*   Updated: 2025/11/27 12:56:03 by acaire-d         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
@@ -24,6 +35,7 @@ char	**ft_split(char *str);
 int		syntax_error(char *strnb);
 int		duplicate_check(t_node *a, long nb);
 void	free_error(t_node **stack, char **argv);
+int		test_malloc(char **array, int pos, size_t buffer);
 void	ft_freematrix(char **argv);
 
 /* Stack initialization & utilities */
@@ -48,14 +60,15 @@ void	rrb(t_node **b);
 void	rrr(t_node **a, t_node **b);
 void	pb(t_node **a, t_node **b);
 void	pa(t_node **a, t_node **b);
+void	rotate_both(t_node **a, t_node **b, int *cost_a, int *cost_b);
 
 /* Longest increasing subsequence */
 void	push_non_lis_to_b(t_node **a, t_node **b, int lis_len);
 void	mark_lis_nodes(t_node *a, int *in_lis);
 int		find_lis(int *idx, int size, int **lis_arr);
-int		mark_lis(int *idx, int size, int *len, int *prev, int **lis_arr);
+int		mark_lis(int *idx, int size, int **dp, int **lis_arr);
 void	lis_dp(int *idx, int size, int *len, int *prev);
-void	ft_LIS(t_node **a, t_node **b);
+void	ft_lis(t_node **a, t_node **b);
 int		*build_index_array(t_node *a, int size);
 
 /* Greedy sorting */

@@ -3,18 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stackinit.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anais <anais@student.42.fr>                +#+  +:+       +#+        */
+/*   By: acaire-d <acaire-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 10:54:03 by acaire-d          #+#    #+#             */
-/*   Updated: 2025/11/21 14:26:50 by anais            ###   ########.fr       */
+/*   Updated: 2025/11/27 12:18:20 by acaire-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// temporary verbose
-
-static int long	ft_atol(char *str) //change res to long long ? to detect overflows?
+static int long	ft_atol(char *str)
 {
 	long	res;
 	int		sign;
@@ -50,11 +48,29 @@ void	ft_stackinit(t_node **a, char **argv)
 		if (!syntax_error(argv[i]))
 			free_error(a, argv);
 		nb = ft_atol(argv[i]);
-		if (nb < INT_MIN || nb > INT_MAX)
+		if (nb < -2147483648 || nb > 2147483647)
 			free_error(a, argv);
 		if (!duplicate_check(*a, nb))
 			free_error(a, argv);
 		ft_lstaddnode(a, nb);
 		i++;
 	}
+}
+
+// test malloc function for ft_split.c
+
+int	test_malloc(char **array, int pos, size_t buffer)
+{
+	int	j;
+
+	j = 0;
+	array[pos] = malloc(buffer);
+	if (array[pos] == NULL)
+	{
+		while (j < pos)
+			free(array[j++]);
+		free(array);
+		return (1);
+	}
+	return (0);
 }
